@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Fake API Gateway Honeypot with Decoy Injection
+
+Resources:
+  FakeApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: fake-api-honeypot
+      Handler: handler.lambda_handler
+      Runtime: python3.12
+      CodeUri: .
+      MemorySize: 128
+      Timeout: 5
+      Environment:
+        Variables:
+          FAKE_API_KEY: "PLACEHOLDER"  # Will be replaced by injector later
+          FAKE_INTERNAL_URL: "http://internal.placeholder.local"  # Same here
+      Events:
+        FakeApi:
+          Type: Api
+          Properties:
+            Path: /fake
+            Method: GET

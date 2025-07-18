@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: DaaS Alert Forwarder Lambda
+
+Resources:
+  AlertForwarderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: daas-alert-forwarder
+      Handler: handler.lambda_handler
+      Runtime: python3.12
+      CodeUri: .
+      MemorySize: 128
+      Timeout: 5
+      Policies:
+        - AWSLambdaBasicExecutionRole

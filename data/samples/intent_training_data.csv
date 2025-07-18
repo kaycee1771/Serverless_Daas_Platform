@@ -1,0 +1,6 @@
+user_agent,description,label
+sqlmap/1.5.1#stable,Probed decoy database endpoint,scanning
+curl/7.88.1,Fake API key accessed,credential_theft
+Wget/1.20.3 (linux-gnu),Downloaded fake DB URL,data_exfiltration
+Mozilla/5.0 (Windows NT 10.0; Win64; x64),Accessed internal trap URL,lateral_movement
+python-requests/2.31.0,Hit fake S3 link,data_exfiltration

@@ -1,0 +1,1 @@
+{"errorMessage": "'awslogs'", "errorType": "KeyError", "requestId": "d4f16a4f-9a38-4e52-bfe4-e3dedb337fbc", "stackTrace": ["  File \"/var/task/handler.py\", line 10, in lambda_handler\n    cw_data = base64.b64decode(event['awslogs']['data'])\n"]}
